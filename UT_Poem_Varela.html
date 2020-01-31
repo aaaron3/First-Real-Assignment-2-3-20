@@ -1,0 +1,114 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<!--
+NOTES:
+1.) I first changed this file by completely changing the color of the background from Black to a nice Orange.
+2.) I then made the font size of the body a lot bigger because everything is bigger in Texas.
+3.) After that, I changed the name of the Title of this project and gave myself credit by putting my name as the author and creator.
+4.) I then changed the color of all texts to white to fit a UT theme.
+5.) Next, I changed where I created the project and what inspired me to create this beautiful masterpiece.
+6.) Finally, I completely changed the theme of my poem to a UT student point of view and what are some possible things they LOVE to do at UT.
+7.) After that, I then changed the boring gray color of the right background to a nice black color, complementing the UT theme of this project.
+8.) Finally, I changed the length of the right black background color to perfectly match the lenght of the text once it's done updating.
+-->
+<style type="text/css">
+/* <![CDATA[ */
+body {
+ background:#BF5700;
+ color:#FFFFFF;
+ margin:0 0 0 18pt;
+ font-family:Optima, sans-serif;
+ font-size:24pt;
+}
+a {
+ color:#FFFFFF;
+ text-decoration:none;
+}
+#main {
+ padding-top:18px;
+ width:70%;
+}
+#main div {
+ font-weight:bold;
+ padding-bottom:9px;
+}
+#info {
+ top:0;
+ right:0;
+ bottom:0;
+ position:absolute;
+ height:215%;
+ width:25%;
+ color:#FFFFFF;
+ background:#000000;
+ margin-left:6px;
+ border-left:thin #000 solid;
+ border-bottom:thin #000 solid;
+ padding:9px;
+ font-size:80%
+}
+/* ]]> */
+</style>
+<script type="text/javascript">
+
+var t = 0,
+material = ['Basketball', 'Football', 'Soccer', 'Swimming', 'Volleyball', 'Baseball', 'Rowing', 'Rugby', 'Track', 'Pool', 'Darts', 'Skating', 'Snowboarding', 'Skydiving', 'Paddleboarding', 'STU-DIE', 'Hang out with friends', 'Learn new skills', 'Join new ORGS', 'Try new food', 'EXPLORE'],
+place = ['One reason why I love this is because'],
+light_source = ['It keeps me entertained', 'I have done this all my life', 'My friend introduced the idea to me', 'It is who I am', 'I love exploring new things', 'My professor made me try it out', 'It runs in the family', 'It is a tradition passed down from generation to generation', 'It passes the time quickly', 'I am bored'],
+inhabitants = ['Hook em', 'Yeehaw', 'Howdy', 'F*** OU', 'We want BAMA', 'To God be the glory', 'AMEN', 'ALRIGHT ALRIGHT ALRIGHT', 'RIP Kobe Bean Bryant', 'Longhorn Nation 4 Life', 'We want MO', 'Keep Austin Weird', 'Follow me on snap: aaaron_3','School is cool', 'Cees get Degrees'];
+
+function rand_range(maximum) {
+    "use strict";
+    return Math.floor(Math.random() * (maximum + 1));
+}
+function choose(array) {
+    "use strict";
+    return array[rand_range(array.length - 1)];
+}
+function stanza() {
+    "use strict";
+    return 'One thing I love at UT: ' + choose(material) + '<br \>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + choose(place) + '<br \>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' + choose(light_source) + '<br \>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ALSO, ' + choose(inhabitants);
+}
+function litany() {
+    "use strict";
+    var last, text, main = document.getElementById('main');
+    if (8 > t) {
+        t += 1;
+    } else {
+        main.removeChild(document.getElementById('main').firstChild);
+    }
+    last = document.createElement('div');
+    last.innerHTML = stanza();
+    main.appendChild(last);
+}
+function produce_litany() {
+    "use strict";
+    litany();
+    setInterval(litany, 5000);
+}
+
+</script>
+  <title>A House of Dust</title>
+</head>
+
+<body onload="produce_litany();">
+<div id="info">
+    <h2> What I like to do at UT</h2>
+    <h3>Aaron Varela<br />
+    Me alone</h3>
+    2020<br />
+    The University of Texas at Austin <a href="https://eastofborneo.org/wp-content/uploads/2016/08/a-house-of-dust-alison-knowles-and-james-tenney-1967-406x500.jpeg"></a><br />
+    FAC 9<br />
+    <br />
+    Inspired by the BEST University in Texas<br />
+    <a href="http://nickm.com"></a><br />
+     <a href="http://nickm.com/memslam/"></a><br />
+     <a href="a_house_of_dust.py"></a>
+</div>
+<div id="main"></div>
+</body>
+</html>
